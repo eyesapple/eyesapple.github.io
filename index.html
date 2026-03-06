@@ -1,38 +1,77 @@
 <!DOCTYPE html><html><head>
-    <title>ARION Clothing</title><style>
-    body {
-        margin: 0;
-        background: black;
-        color: white;
-        text-align: center;
-        font-family: Arial, sans-serif;
-    }
+<title>ARION Clothing</title><style>
+body{
+margin:0;
+background:black;
+color:white;
+font-family:Arial;
+text-align:center;
+}
 
-    header {
-        padding: 30px;
-        font-size: 40px;
-        letter-spacing: 4px;
-        font-weight: bold;
-    }
+header{
+padding:30px;
+font-size:40px;
+font-weight:bold;
+letter-spacing:5px;
+}
 
-    .hero {
-        margin-top: 100px;
-    }
+.hero{
+margin-top:80px;
+}
 
-    button {
-        padding: 12px 25px;
-        font-size: 16px;
-        border: none;
-        border-radius: 6px;
-        background: white;
-        cursor: pointer;
-    }
-</style>
+button{
+padding:12px 25px;
+font-size:16px;
+border:none;
+border-radius:6px;
+background:white;
+cursor:pointer;
+}
 
-</head><body><header>ARION</header><div class="hero">
-    <h1>Minimal Clothing Brand</h1>
-    <p>Rare by Nature</p><button onclick="alert('Store coming soon')">
-    Shop Now
-</button>
+.products{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:30px;
+margin-top:80px;
+padding:40px;
+}
 
-</div></body></html>
+.card{
+background:#111;
+width:220px;
+padding:15px;
+border-radius:10px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.08);
+}
+
+.card img{
+width:100%;
+border-radius:8px;
+}
+
+.price{
+color:#ccc;
+}
+</style></head><body><header>ARION</header><div class="hero">
+<h1>Minimal Clothing Brand</h1>
+<p>Rare by Nature</p>
+<button onclick="alert('Store coming soon')">Shop Now</button>
+</div><div class="products"><div class="card">
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab">
+<h3>Black Minimal Tee</h3>
+<p class="price">₹799</p>
+</div><div class="card">
+<img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1">
+<h3>White Classic Tee</h3>
+<p class="price">₹799</p>
+</div><div class="card">
+<img src="https://images.unsplash.com/photo-1520975922071-0a6e6e3d3a2c">
+<h3>Oversized Street Tee</h3>
+<p class="price">₹999</p>
+</div></div></body>
+</html>
