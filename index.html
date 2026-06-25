@@ -1,77 +1,60 @@
-<!DOCTYPE html><html><head>
-<title> </title><style>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Eyes Chess</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/chessboard-1.0.0.min.css">
+
+<style>
 body{
-margin:0;
-background:black;
-color:white;
-font-family:Arial;
-text-align:center;
+    background:#1b1b1b;
+    color:white;
+    text-align:center;
+    font-family:Arial;
 }
 
-header{
-padding:30px;
-font-size:40px;
-font-weight:bold;
-letter-spacing:5px;
+#board{
+    width:400px;
+    margin:20px auto;
 }
 
-.hero{
-margin-top:80px;
+h1{
+    color:gold;
 }
+</style>
+</head>
+<body>
 
-button{
-padding:12px 25px;
-font-size:16px;
-border:none;
-border-radius:6px;
-background:white;
-cursor:pointer;
-}
+<h1>♟️ Eyes Chess</h1>
+<p>Play chess for free.</p>
 
-.products{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:30px;
-margin-top:80px;
-padding:40px;
-}
+<div id="board"></div>
 
-.card{
-background:#111;
-width:220px;
-padding:15px;
-border-radius:10px;
-transition:0.3s;
-}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.13.4/chess.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/chessboard-1.0.0.min.js"></script>
 
-.card:hover{
-transform:scale(1.08);
-}
+<script>
+var game = new Chess();
 
-.card img{
-width:100%;
-border-radius:8px;
-}
+var board = Chessboard('board', {
+    draggable: true,
+    position: 'start',
+    onDrop: function(source, target) {
 
-.price{
-color:#ccc;
-}
-</style></head><body><header>ARION</header><div class="hero">
-<h1>Minimal Clothing Brand</h1>
-<p>Rare by Nature</p>
-<button onclick="alert('Store coming soon')">Shop Now</button>
-</div><div class="products"><div class="card">
-<img src="ARION.jpeg">
-<h3>White Minimal Tee</h3>
-<p class="price">₹799</p>
-</div><div class="card">
-<img src="ARION2.jpeg">
-<h3>Black Classic Tee</h3>
-<p class="price">₹799</p>
-</div><div class="card">
-<img src=
-<h3>Oversized Street Tee</h3>
-<p class="price">₹999</p>
-</div></div></body>
+        var move = game.move({
+            from: source,
+            to: target,
+            promotion: 'q'
+        });
+
+        if(move === null){
+            return 'snapback';
+        }
+    }
+});
+</script>
+
+</body>
 </html>
